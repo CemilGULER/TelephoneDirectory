@@ -1,0 +1,2 @@
+Add-Migration <<Name>> -P TelephoneDirectory.Data.Access -C TelephoneDirectoryDbContext -S TelephoneDirectory.Contact.Api
+Update-Database -P TelephoneDirectory.Data.Access -Context TelephoneDirectoryDbContext -S TelephoneDirectory.Contact.Api
