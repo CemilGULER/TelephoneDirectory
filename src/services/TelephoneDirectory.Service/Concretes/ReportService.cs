@@ -41,28 +41,25 @@ namespace TelephoneDirectory.Service.Concretes
             var reportList = dbContext.Reports.Where(x => x.IsDeleted == false);
             return await reportList.Select(rpr => mapper.Map<ReportListResponse>(rpr)).ToListAsync(cancellationToken);
         }
-        public async Task CompletedReport(Guid id, CancellationToken cancellationToken)
+        public async Task CompletedReport(CompletedReportRequest completedReportRequest, CancellationToken cancellationToken)
         {
-            var report = await dbContext.Reports.SingleAsync(x => x.Id == id, cancellationToken);
+            var report = await dbContext.Reports.SingleAsync(x => x.Id == completedReportRequest.Id, cancellationToken);
             report.ReportStatus = true;
+            report.ReportPath = completedReportRequest.ReportPath;
+            report.ReportFilName = completedReportRequest.ReportFilName;
             dbContext.Reports.Update(report);
             await dbContext.SaveChangesAsync(cancellationToken);
         }
-        public async Task<List<ReportDetailResponse>> ReportDetail(Guid id, CancellationToken cancellationToken)
+        public async Task<CompletedReportResponse> ReportDetail(Guid id, CancellationToken cancellationToken)
         {
             var reportDetail = await dbContext.Reports.FirstAsync(x => x.Id == id, cancellationToken);
             if (reportDetail.ReportStatus == false)
                 throw new Exception("Henüz rapor hazırlanmadı");
-            var query = dbContext.
-                   PersonContacts.
-                   Where(x => x.IsDeleted == false && x.ContactType == Data.Entities.Enum.ContactType.Location).
-                   GroupBy(x => x.ContactDetail).
-                   Select(g => new ReportDetailResponse
-                   {
-                       LocationName = g.Key,
-
-                   });
-            return await query.ToListAsync(cancellationToken);
+            return new CompletedReportResponse
+            {
+                ReportFilName = reportDetail.ReportFilName,
+                ReportPath = reportDetail.ReportPath
+            };
         }
     }
 }

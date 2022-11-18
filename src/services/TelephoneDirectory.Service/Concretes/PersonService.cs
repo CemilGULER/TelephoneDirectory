@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TelephoneDirectory.Contact.Contracts.Dto;
 using TelephoneDirectory.Data.Access.Context;
 using TelephoneDirectory.Data.Entities;
+using TelephoneDirectory.Report.Contracts.Dto;
 using TelephoneDirectory.Service.Abstractions;
 
 namespace TelephoneDirectory.Service.Concretes
@@ -71,6 +72,19 @@ namespace TelephoneDirectory.Service.Concretes
                 .Where(x => x.Id == id && x.IsDeleted == false).SingleAsync(cancellationToken);
             return mapper.Map<PersonDetailResponse>(person);
 
+        }
+        public async Task<List<LocationDetailResponse>> LocationDetail( CancellationToken cancellationToken)
+        {
+            var query = dbContext.
+                   PersonContacts.
+                   Where(x => x.IsDeleted == false && x.ContactType == Data.Entities.Enum.ContactType.Location).
+                   GroupBy(x => x.ContactDetail).
+                   Select(g => new LocationDetailResponse
+                   {
+                       LocationName = g.Key,
+
+                   });
+            return await query.ToListAsync(cancellationToken);
         }
     }
 }

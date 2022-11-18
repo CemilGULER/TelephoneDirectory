@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TelephoneDirectory.Contact.Contracts.Dto;
+using TelephoneDirectory.Report.Contracts.Dto;
 
 namespace TelephoneDirectory.Service.Abstractions
 {
@@ -13,5 +14,6 @@ namespace TelephoneDirectory.Service.Abstractions
         Task RemovePerson(Guid id, CancellationToken cancellationToken);
         Task<List<SearchPersonResponse>> SearchPerson(SearchPersonRequest searchPerson, CancellationToken cancellationToken);
         Task<PersonDetailResponse> PersonDetail(Guid id, CancellationToken cancellationToken);
+        Task<List<LocationDetailResponse>> LocationDetail( CancellationToken cancellationToken);
     }
 }

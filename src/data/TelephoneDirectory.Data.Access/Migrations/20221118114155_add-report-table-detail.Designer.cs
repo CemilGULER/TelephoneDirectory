@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TelephoneDirectory.Data.Access.Context;
@@ -11,9 +12,10 @@ using TelephoneDirectory.Data.Access.Context;
 namespace TelephoneDirectory.Data.Access.Migrations
 {
     [DbContext(typeof(TelephoneDirectoryDbContext))]
-    partial class TelephoneDirectoryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221118114155_add-report-table-detail")]
+    partial class addreporttabledetail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

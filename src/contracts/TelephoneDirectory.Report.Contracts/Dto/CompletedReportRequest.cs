@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TelephoneDirectory.Data.Entities.Abstractions;
 
-namespace TelephoneDirectory.Data.Entities
+namespace TelephoneDirectory.Report.Contracts.Dto
 {
-    public class Report : AuditEntityBase
+    public class CompletedReportRequest
     {
-        public bool? ReportStatus { get; set; }
+        public Guid Id { get; set; }
         public string? ReportPath { get; set; }
         public string? ReportFilName { get; set; }
     }

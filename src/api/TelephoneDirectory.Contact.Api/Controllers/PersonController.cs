@@ -51,10 +51,29 @@ namespace TelephoneDirectory.Contact.Api.Controllers
             return Ok(await personService.SearchPerson(searchPerson, cancellationToken));
 
         }
+        /// <summary>
+        /// Rehberdeki bir kişiyle ilgili iletişim bilgilerinin de yer aldığı detay bilgilerin getirilmesi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         [HttpGet("person-detail")]
         public async Task<IActionResult> PersonDetail([FromQuery] Guid id, CancellationToken cancellationToken)
         {
             return Ok(await personService.PersonDetail(id, cancellationToken));
+
+        }
+
+        /// <summary>
+        /// konum detay raporu
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        [HttpGet("location-detail")]
+        public async Task<IActionResult> LocationDetail( CancellationToken cancellationToken)
+        {
+            return Ok(await personService.LocationDetail( cancellationToken));
 
         }
     }

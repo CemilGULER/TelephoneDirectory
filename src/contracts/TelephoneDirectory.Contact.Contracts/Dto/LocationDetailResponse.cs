@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TelephoneDirectory.Report.Contracts.Dto
+namespace TelephoneDirectory.Contact.Contracts.Dto
 {
-    public class ReportDetailResponse
+    public class LocationDetailResponse
     {
         public string LocationName { get; set; }
         public int LocationPersonCount { get; set; }

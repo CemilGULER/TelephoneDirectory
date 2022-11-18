@@ -11,7 +11,7 @@ namespace TelephoneDirectory.Service.Abstractions
     {
         Task ReportRequest( CancellationToken cancellationToken);
         Task<List<ReportListResponse>> ReportList(CancellationToken cancellationToken);
-        Task CompletedReport(Guid id, CancellationToken cancellationToken);
-        Task<List<ReportDetailResponse>> ReportDetail(Guid id,CancellationToken cancellationToken);
+        Task CompletedReport(CompletedReportRequest completedReportRequest, CancellationToken cancellationToken);
+        Task<CompletedReportResponse> ReportDetail(Guid id, CancellationToken cancellationToken);
     }
 }
