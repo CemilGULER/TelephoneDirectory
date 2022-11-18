@@ -20,11 +20,11 @@ namespace TelephoneDirectory.Mq.Service.Concretes
         {
             var factory = new ConnectionFactory()
             {
-                UserName = configuration.GetSection("Settings").GetSection("UserName").Value,
-                Password = configuration.GetSection("Settings").GetSection("Password").Value,
+                UserName = configuration.GetSection("Settings").GetSection("RabbitMq").GetSection("UserName").Value,
+                Password = configuration.GetSection("Settings").GetSection("RabbitMq").GetSection("Password").Value,
                 AutomaticRecoveryEnabled = true,
-                HostName = configuration.GetSection("Settings").GetSection("HostName").Value,
-                Port = Convert.ToInt32(configuration.GetSection("Settings").GetSection("5672").Value),
+                HostName = configuration.GetSection("Settings").GetSection("RabbitMq").GetSection("HostName").Value,
+                Port = Convert.ToInt32(configuration.GetSection("Settings").GetSection("RabbitMq").GetSection("Port").Value),
                 DispatchConsumersAsync = true
 
             };

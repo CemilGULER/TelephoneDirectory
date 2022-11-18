@@ -29,7 +29,7 @@ namespace TelephoneDirectory.Service.Concretes
         {
             var report = new Data.Entities.Report
             {
-                CreatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
                 ReportStatus = false
             };
             await dbContext.Reports.AddAsync(report, cancellationToken);
