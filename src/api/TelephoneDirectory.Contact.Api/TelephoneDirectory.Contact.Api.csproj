@@ -15,11 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\data\TelephoneDirectory.Data.Access\TelephoneDirectory.Data.Access.csproj" />
+    <ProjectReference Include="..\..\services\TelephoneDirectory.Service\TelephoneDirectory.Service.csproj" />
   </ItemGroup>
 
 </Project>

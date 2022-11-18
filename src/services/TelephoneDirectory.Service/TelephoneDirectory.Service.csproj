@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\contracts\TelephoneDirectory.Contact.Contracts\TelephoneDirectory.Contact.Contracts.csproj" />
+    <ProjectReference Include="..\..\contracts\TelephoneDirectory.Report.Contracts\TelephoneDirectory.Report.Contracts.csproj" />
+    <ProjectReference Include="..\..\data\TelephoneDirectory.Data.Access\TelephoneDirectory.Data.Access.csproj" />
+    <ProjectReference Include="..\..\data\TelephoneDirectory.Data.Entities\TelephoneDirectory.Data.Entities.csproj" />
+    <ProjectReference Include="..\TelephoneDirectory.Mq.Service\TelephoneDirectory.Mq.Service.csproj" />
+  </ItemGroup>
+
+</Project>

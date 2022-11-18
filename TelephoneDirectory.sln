@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F6407D69-F141-45FA-A9AF-DBF19AED2B82}"
 	ProjectSection(SolutionItems) = preProject
-		Migration.txt = Migration.txt
+		docs\Migration.txt = docs\Migration.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{718742A7-634B-46E6-A36E-3CA5A3698521}"
@@ -16,15 +16,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{EFF0F72F-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "httpHandlers", "httpHandlers", "{09A380AE-8333-45B1-8787-7776653FA8C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Data.Access", "src\data\TelephoneDirectory.Data.Access\TelephoneDirectory.Data.Access.csproj", "{B8956B36-FDB8-4120-9110-EAAB562DD9AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelephoneDirectory.Data.Access", "src\data\TelephoneDirectory.Data.Access\TelephoneDirectory.Data.Access.csproj", "{B8956B36-FDB8-4120-9110-EAAB562DD9AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Data.Entities", "src\data\TelephoneDirectory.Data.Entities\TelephoneDirectory.Data.Entities.csproj", "{7433F4FD-B071-4989-B5DC-2E4440BA0A1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelephoneDirectory.Data.Entities", "src\data\TelephoneDirectory.Data.Entities\TelephoneDirectory.Data.Entities.csproj", "{7433F4FD-B071-4989-B5DC-2E4440BA0A1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{2ED513E8-0F24-4E75-840D-143595ABCE03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Contact.Api", "src\api\TelephoneDirectory.Contact.Api\TelephoneDirectory.Contact.Api.csproj", "{294D3AD5-5310-4FDD-B674-47BE7A38D1FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelephoneDirectory.Contact.Api", "src\api\TelephoneDirectory.Contact.Api\TelephoneDirectory.Contact.Api.csproj", "{294D3AD5-5310-4FDD-B674-47BE7A38D1FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Report.Api", "src\api\TelephoneDirectory.Report.Api\TelephoneDirectory.Report.Api.csproj", "{4246D7CE-F466-4613-92B5-32A4E34C27AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelephoneDirectory.Report.Api", "src\api\TelephoneDirectory.Report.Api\TelephoneDirectory.Report.Api.csproj", "{4246D7CE-F466-4613-92B5-32A4E34C27AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "contracts", "contracts", "{B20C10B1-EC5B-4FCD-8AC4-311326268751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Contact.Contracts", "src\contracts\TelephoneDirectory.Contact.Contracts\TelephoneDirectory.Contact.Contracts.csproj", "{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Report.Contracts", "src\contracts\TelephoneDirectory.Report.Contracts\TelephoneDirectory.Report.Contracts.csproj", "{95CC2641-76DA-4150-BE4F-3C3900FB7428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Service", "src\services\TelephoneDirectory.Service\TelephoneDirectory.Service.csproj", "{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Mq.Service", "src\services\TelephoneDirectory.Mq.Service\TelephoneDirectory.Mq.Service.csproj", "{600D7278-B467-4D23-9579-C3320B42B93E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Common", "TelephoneDirectory.Common\TelephoneDirectory.Common.csproj", "{E0A34D8B-DB53-4FE5-9BD7-CFD782347993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Report.HttpHandler", "src\httpHandlers\TelephoneDirectory.Report.HttpHandler\TelephoneDirectory.Report.HttpHandler.csproj", "{4F73964F-BAAF-44A5-8C1E-619188EA244B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +62,30 @@ Global
 		{4246D7CE-F466-4613-92B5-32A4E34C27AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4246D7CE-F466-4613-92B5-32A4E34C27AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4246D7CE-F466-4613-92B5-32A4E34C27AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CC2641-76DA-4150-BE4F-3C3900FB7428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CC2641-76DA-4150-BE4F-3C3900FB7428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CC2641-76DA-4150-BE4F-3C3900FB7428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CC2641-76DA-4150-BE4F-3C3900FB7428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600D7278-B467-4D23-9579-C3320B42B93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600D7278-B467-4D23-9579-C3320B42B93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600D7278-B467-4D23-9579-C3320B42B93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600D7278-B467-4D23-9579-C3320B42B93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A34D8B-DB53-4FE5-9BD7-CFD782347993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A34D8B-DB53-4FE5-9BD7-CFD782347993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A34D8B-DB53-4FE5-9BD7-CFD782347993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A34D8B-DB53-4FE5-9BD7-CFD782347993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F73964F-BAAF-44A5-8C1E-619188EA244B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F73964F-BAAF-44A5-8C1E-619188EA244B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F73964F-BAAF-44A5-8C1E-619188EA244B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F73964F-BAAF-44A5-8C1E-619188EA244B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +99,13 @@ Global
 		{2ED513E8-0F24-4E75-840D-143595ABCE03} = {718742A7-634B-46E6-A36E-3CA5A3698521}
 		{294D3AD5-5310-4FDD-B674-47BE7A38D1FF} = {EDC4BA5B-6405-4245-A89E-57D26676AB19}
 		{4246D7CE-F466-4613-92B5-32A4E34C27AB} = {EDC4BA5B-6405-4245-A89E-57D26676AB19}
+		{B20C10B1-EC5B-4FCD-8AC4-311326268751} = {718742A7-634B-46E6-A36E-3CA5A3698521}
+		{37C9E34D-4FDB-4CEC-BC8C-31EEE6FCEF3F} = {B20C10B1-EC5B-4FCD-8AC4-311326268751}
+		{95CC2641-76DA-4150-BE4F-3C3900FB7428} = {B20C10B1-EC5B-4FCD-8AC4-311326268751}
+		{8231F8B3-B3D9-48BD-8A96-7B0DCD0D9494} = {2ED513E8-0F24-4E75-840D-143595ABCE03}
+		{600D7278-B467-4D23-9579-C3320B42B93E} = {2ED513E8-0F24-4E75-840D-143595ABCE03}
+		{E0A34D8B-DB53-4FE5-9BD7-CFD782347993} = {718742A7-634B-46E6-A36E-3CA5A3698521}
+		{4F73964F-BAAF-44A5-8C1E-619188EA244B} = {09A380AE-8333-45B1-8787-7776653FA8C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC1206F4-4002-4B5B-90FF-DC5DA57D03C3}

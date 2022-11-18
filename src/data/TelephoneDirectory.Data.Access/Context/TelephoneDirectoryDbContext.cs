@@ -15,6 +15,7 @@ namespace TelephoneDirectory.Data.Access.Context
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<PersonContact> PersonContacts { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

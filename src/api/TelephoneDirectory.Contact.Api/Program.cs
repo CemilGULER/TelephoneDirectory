@@ -1,5 +1,10 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TelephoneDirectory.Data.Access.Context;
+using TelephoneDirectory.Service.Abstractions;
+using TelephoneDirectory.Service.Concretes;
+using TelephoneDirectory.Service.Extensions;
+using TelephoneDirectory.Service.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +16,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TelephoneDirectoryDbContext>(options =>
             options.UseNpgsql(builder.Configuration["Settings:Database:ConnectionString"]));
+#region di
+builder.Services.AddPersonServices(builder.Configuration);
+builder.Services.AddPersonContactServices(builder.Configuration);
+#endregion
+#region mapper
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new PersonMapperProfile());
+    mc.AddProfile(new PersonContactMapperProfile());
+});
+var mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
