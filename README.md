@@ -18,6 +18,15 @@ Rapor talep işlemlerinin yapıldığı servislerdir.
 #### 3- BackgroundService
 Rapor talep edilme işlemi yapıldıktan sonra raporu oluşturan arka plan servisleridir. Öncelikler kuyruk üzerinden talep okunur. Sonra httpclient ile  Contact.Api üzerinden rapora ait data alınır sonrasında rapor oluşturulak(Dosya işlemi yapılır) rapora ait bilgiler httpclient ile Report.Api  üzerinde set edilir. 
 
-#### 3- Uygulama işleyişi aşağıdaki gibidir. 
+#### Uygulama işleyişi aşağıdaki gibidir. 
 BackgroundService ile Contact.Api ve  Report.Api arasındaki ilişki httprequest üzerinden yürütülmektedir. 
 ![](https://raw.githubusercontent.com/CemilGULER/TelephoneDirectory/development/MimariTasar%C4%B1m.png)
+
+#### Veritabanı. 
+Veritabanı olarak postgresql kullanılmıştır.  
+Code First yaklaşımı tercih edilmiştir.  
+**docker run -e POSTGRES_PASSWORD="1q2w3e4R!" -p 5432:5432 --name local-postgres postgres** komutu ile local ortama postgre kurulumu gerçekleştirilmiştir.  
+**Update-Database -P TelephoneDirectory.Data.Access -Context TelephoneDirectoryDbContext -S TelephoneDirectory.Contact.Api** komutu ile oluşturulan migrationların veritabanına yansıması sağlanmalıdır.
+### Kuyruk
+Kuyruk olarak RabbitMQ tercih edilmiştir.
+  
