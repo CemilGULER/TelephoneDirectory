@@ -17,3 +17,7 @@ Rapor talep işlemlerinin yapıldığı servislerdir.
 - (HttpPost) api/report/completed-report: Backround servislerinde rapor oluşturulduktan saporun adı ve rapor yolunun setlendiği servistir.
 #### 3- BackgroundService
 Rapor talep edilme işlemi yapıldıktan sonra raporu oluşturan arka plan servisleridir. Öncelikler kuyruk üzerinden talep okunur. Sonra httpclient ile  Contact.Api üzerinden rapora ait data alınır sonrasında rapor oluşturulak(Dosya işlemi yapılır) rapora ait bilgiler httpclient ile Report.Api  üzerinde set edilir. 
+
+#### 3- Uygulama işleyişi aşağıdaki gibidir. 
+BackgroundService ile Contact.Api ve  Report.Api arasındaki ilişki httprequest üzerinden yürütülmektedir. 
+![](https://raw.githubusercontent.com/CemilGULER/TelephoneDirectory/development/MimariTasar%C4%B1m.png)
