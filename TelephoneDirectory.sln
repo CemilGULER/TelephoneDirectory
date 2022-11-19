@@ -46,6 +46,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Backgrou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Contact.HttpHandler", "src\httpHandlers\TelephoneDirectory.Contact.HttpHandler\TelephoneDirectory.Contact.HttpHandler.csproj", "{B8FE07B8-0087-4F52-98E9-77350CE61FA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0E681A92-1884-4A8E-98F9-DF0863017C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Unit.Test", "src\test\TelephoneDirectory.Unit.Test\TelephoneDirectory.Unit.Test.csproj", "{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Api.Contact.IntegrationTest", "src\test\TelephoneDirectory.Api.IntegrationTest\TelephoneDirectory.Api.Contact.IntegrationTest.csproj", "{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelephoneDirectory.Api.Report.IntegrationTest", "src\test\TelephoneDirectory.Api.Report.IntegrationTest\TelephoneDirectory.Api.Report.IntegrationTest.csproj", "{D17833AC-ACBE-46BA-B496-79F678CB3517}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +108,18 @@ Global
 		{B8FE07B8-0087-4F52-98E9-77350CE61FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8FE07B8-0087-4F52-98E9-77350CE61FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8FE07B8-0087-4F52-98E9-77350CE61FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17833AC-ACBE-46BA-B496-79F678CB3517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17833AC-ACBE-46BA-B496-79F678CB3517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17833AC-ACBE-46BA-B496-79F678CB3517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17833AC-ACBE-46BA-B496-79F678CB3517}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +143,10 @@ Global
 		{91B9A219-00A8-4882-B545-FC0556C359AF} = {718742A7-634B-46E6-A36E-3CA5A3698521}
 		{5E1180AF-574B-4CDF-95EA-8CA011872B00} = {91B9A219-00A8-4882-B545-FC0556C359AF}
 		{B8FE07B8-0087-4F52-98E9-77350CE61FA4} = {09A380AE-8333-45B1-8787-7776653FA8C1}
+		{0E681A92-1884-4A8E-98F9-DF0863017C86} = {718742A7-634B-46E6-A36E-3CA5A3698521}
+		{C0FB52D5-D3B7-47D1-AEA9-9FC38D240A0B} = {0E681A92-1884-4A8E-98F9-DF0863017C86}
+		{720BC6F5-BE3D-4DBE-8188-9E5570E20BC5} = {0E681A92-1884-4A8E-98F9-DF0863017C86}
+		{D17833AC-ACBE-46BA-B496-79F678CB3517} = {0E681A92-1884-4A8E-98F9-DF0863017C86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC1206F4-4002-4B5B-90FF-DC5DA57D03C3}

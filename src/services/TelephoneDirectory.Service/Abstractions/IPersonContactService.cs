@@ -9,7 +9,7 @@ namespace TelephoneDirectory.Service.Abstractions
 {
     public interface IPersonContactService
     {
-        Task AddPersonContact(AddPersonContactRequest addPersonContactRequest, CancellationToken cancellationToken);
+        Task<Guid> AddPersonContact(AddPersonContactRequest addPersonContactRequest, CancellationToken cancellationToken);
         Task RemovePersonContact(Guid id, CancellationToken cancellationToken);
     }
 }

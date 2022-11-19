@@ -24,8 +24,8 @@ namespace TelephoneDirectory.Contact.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPerson([FromBody] AddPersonRequest addPersonRequest, CancellationToken cancellationToken)
         {
-            await personService.AddPerson(addPersonRequest, cancellationToken);
-            return Ok();
+            var personId=await personService.AddPerson(addPersonRequest, cancellationToken);
+            return Ok(personId);
         }
         /// <summary>
         /// Rehberde kişi kaldırma

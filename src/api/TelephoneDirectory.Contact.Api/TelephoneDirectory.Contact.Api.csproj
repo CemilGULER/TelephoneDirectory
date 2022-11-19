@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\TelephoneDirectory.Common\TelephoneDirectory.Common.csproj" />
     <ProjectReference Include="..\..\data\TelephoneDirectory.Data.Access\TelephoneDirectory.Data.Access.csproj" />
     <ProjectReference Include="..\..\services\TelephoneDirectory.Service\TelephoneDirectory.Service.csproj" />
   </ItemGroup>

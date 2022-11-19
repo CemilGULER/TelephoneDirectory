@@ -9,7 +9,7 @@ namespace TelephoneDirectory.Service.Abstractions
 {
     public interface IReportService
     {
-        Task ReportRequest( CancellationToken cancellationToken);
+        Task<Guid> ReportRequest( CancellationToken cancellationToken);
         Task<List<ReportListResponse>> ReportList(CancellationToken cancellationToken);
         Task CompletedReport(CompletedReportRequest completedReportRequest, CancellationToken cancellationToken);
         Task<CompletedReportResponse> ReportDetail(Guid id, CancellationToken cancellationToken);

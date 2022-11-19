@@ -23,8 +23,8 @@ namespace TelephoneDirectory.Report.Api.Controllers
         [HttpPost("report-request")]
         public async Task<IActionResult> ReportRequest(CancellationToken cancellationToken)
         {
-            await reportService.ReportRequest(cancellationToken);
-            return Ok();
+            var reportRequestId= await reportService.ReportRequest(cancellationToken);
+            return Ok(reportRequestId);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using TelephoneDirectory.Common.Middleware;
 using TelephoneDirectory.Data.Access.Context;
 using TelephoneDirectory.Service.Abstractions;
 using TelephoneDirectory.Service.Concretes;
@@ -41,7 +42,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
 
 app.Run();
+public partial class Program { }

@@ -24,8 +24,8 @@ namespace TelephoneDirectory.Contact.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPersonContact([FromBody] AddPersonContactRequest addPersonContactRequest, CancellationToken cancellationToken)
         {
-            await personContactService.AddPersonContact(addPersonContactRequest, cancellationToken);
-            return Ok();
+            var personContactId = await personContactService.AddPersonContact(addPersonContactRequest, cancellationToken);
+            return Ok(personContactId);
         }
         /// <summary>
         /// Rehberdeki kişiden iletişim bilgisi kaldırma

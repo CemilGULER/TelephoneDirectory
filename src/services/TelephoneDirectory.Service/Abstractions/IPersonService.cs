@@ -10,7 +10,7 @@ namespace TelephoneDirectory.Service.Abstractions
 {
     public  interface IPersonService
     {
-        Task AddPerson(AddPersonRequest addPersonRequest, CancellationToken cancellationToken);
+        Task<Guid> AddPerson(AddPersonRequest addPersonRequest, CancellationToken cancellationToken);
         Task RemovePerson(Guid id, CancellationToken cancellationToken);
         Task<List<SearchPersonResponse>> SearchPerson(SearchPersonRequest searchPerson, CancellationToken cancellationToken);
         Task<PersonDetailResponse> PersonDetail(Guid id, CancellationToken cancellationToken);

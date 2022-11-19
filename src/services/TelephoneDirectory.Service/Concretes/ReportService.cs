@@ -25,7 +25,7 @@ namespace TelephoneDirectory.Service.Concretes
             this.dbContext = dbContext;
             this.mapper = mapper;
         }
-        public async Task ReportRequest(CancellationToken cancellationToken)
+        public async Task<Guid> ReportRequest(CancellationToken cancellationToken)
         {
             var report = new Data.Entities.Report
             {
@@ -35,6 +35,7 @@ namespace TelephoneDirectory.Service.Concretes
             await dbContext.Reports.AddAsync(report, cancellationToken);
             await dbContext.SaveChangesAsync(cancellationToken);
             rabbitProducer.BasicPublish("report-request", report.Id.ToString(), cancellationToken);
+            return report.Id;
         }
         public async Task<List<ReportListResponse>> ReportList(CancellationToken cancellationToken)
         {

@@ -22,11 +22,12 @@ namespace TelephoneDirectory.Service.Concretes
             this.dbContext = dbContext;
             this.mapper = mapper;
         }
-        public async Task AddPersonContact(AddPersonContactRequest addPersonContactRequest, CancellationToken cancellationToken)
+        public async Task<Guid> AddPersonContact(AddPersonContactRequest addPersonContactRequest, CancellationToken cancellationToken)
         {
             var personContact = mapper.Map<PersonContact>(addPersonContactRequest);
             await dbContext.PersonContacts.AddAsync(personContact, cancellationToken);
             await dbContext.SaveChangesAsync(cancellationToken);
+            return personContact.Id;
         }
 
         public async Task RemovePersonContact(Guid id, CancellationToken cancellationToken)
