@@ -1,4 +1,5 @@
 # TelephoneDirectory
+Uygulama .net 6.0'da geliştirilmiştir. 
 ### Uygulama temelde 3 servisten oluşmaktadır.
 #### 1- Contact.Api
 Kişi ve Kişi iletişim bilgilerinin işlendiği servislerdir. 
@@ -29,4 +30,10 @@ Code First yaklaşımı tercih edilmiştir.
 **Update-Database -P TelephoneDirectory.Data.Access -Context TelephoneDirectoryDbContext -S TelephoneDirectory.Contact.Api** komutu ile oluşturulan migrationların veritabanına yansıması sağlanmalıdır.
 ### Kuyruk
 Kuyruk olarak RabbitMQ tercih edilmiştir.
+### Test
+Uygulamayı uçtan uca test edecek toplamda 14 adet test geliştirilmiştir.  
+Bunların 4 tanesi Unit Test geri kalan 10 tanesi  Integration Test'dir.  
+![](https://raw.githubusercontent.com/CemilGULER/TelephoneDirectory/development/Test.PNG)
+### Git
+Developer branch'inde her committe versiyon tag'leme yapılmış olup, Geliştirme tamamlandıktan sonra pull request oluşturulurak kontroller sonrasında ana branch olan main'e birleştirilmiştir. 
   
